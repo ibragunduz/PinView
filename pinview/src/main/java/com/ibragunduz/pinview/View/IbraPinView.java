@@ -21,6 +21,8 @@ import com.ibragunduz.pinview.Interfaces.PinLockListener;
 import com.ibragunduz.pinview.Interfaces.SetPinListener;
 import com.ibragunduz.pinview.R;
 
+import java.util.logging.Handler;
+
 public class IbraPinView extends LinearLayout  {
 
     public static String TYPE_SET_LOCK = "type_set_lock";
@@ -84,6 +86,8 @@ public class IbraPinView extends LinearLayout  {
     }
     private void onUnCorrect(){
 if (pinLockListener!=null)pinLockListener.onError();
+
+
 
     }
 
@@ -150,10 +154,16 @@ if (setPinListener!=null)setPinListener.onPinChange(password);
     }
 
     public void reset(){
+
+        new android.os.Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
         password = "";
-       cardx.setVisibility(INVISIBLE);
-       pinIndicator.setPassiveCircles(8);
+        cardx.setVisibility(INVISIBLE);
         update();
+            }
+        },250);
+
 
     }
 
