@@ -152,6 +152,7 @@ if (setPinListener!=null)setPinListener.onPinChange(password);
     public void reset(){
         password = "";
        cardx.setVisibility(INVISIBLE);
+       pinIndicator.setPassiveCircles(8);
         update();
 
     }
