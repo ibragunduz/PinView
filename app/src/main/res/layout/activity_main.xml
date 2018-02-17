@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient_green"
+    tools:context="com.ibragunduz.pinview.MainActivity">
+
+    <com.ibragunduz.pinview.View.IbraPinIndicator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pin_view"
+        android:gravity="center"
+        android:id="@+id/indicator"
+        />
+
+
+    <com.ibragunduz.pinview.View.IbraPinView
+        android:id="@+id/pin_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="40dp"
+        app:layout_constraintVertical_bias="1.0" />
+
+</LinearLayout>
