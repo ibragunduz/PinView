@@ -21,28 +21,30 @@ public class MainActivity extends AppCompatActivity {
 
 
         pinView.attachIndicator(pinIndicator,IbraPinView.TYPE_SET_LOCK);
+        //pinView.attachIndicator(pinIndicator,IbraPinView.TYPE_LOCK_SCREEN);
         //pinView.setCorrectPassword("1234");
 
+        pinIndicator.setDotDrawable(R.drawable.ic_circle);
         pinIndicator.setMargin(20);
         pinIndicator.setTextSize(10);
         pinIndicator.setDotSize(40,40);
         pinIndicator.setTextColor("#ffffff");
-        pinView.setPinLockListener(new PinLockListener() {
+      /*  pinView.setPinLockListener(new PinLockListener() {
             @Override
             public void onSuccess() {
-                Toast.makeText(MainActivity.this, "Hoaaaydaaa Doğru girdin", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Successful", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError() {
-                Toast.makeText(MainActivity.this, "ohooo Yanlış girdin", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "TRY AGAIN!", Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
         pinView.setSetPinListener(new SetPinListener() {
             @Override
             public void onPinChange(String pin) {
-                Log.i("dd : ",pin);
+                Log.i("entered pin : ",pin);
             }
         });
 
