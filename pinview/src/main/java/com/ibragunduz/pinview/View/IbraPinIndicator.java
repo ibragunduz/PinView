@@ -101,14 +101,18 @@ public class IbraPinIndicator extends LinearLayout {
       final TextView txt =   ((TextView)rootView.findViewById(txts[password.length()-1]));
       txt.setVisibility(VISIBLE);
       txt.setText(password.charAt(password.length()-1)+"");
-       new android.os.Handler().postDelayed(new Runnable() {
-           @Override
-           public void run() {
-               txt.setVisibility(INVISIBLE);
-               img.setVisibility(VISIBLE);
-               setActiveCircles(password.length());
-           }
-       },250);
+      try {
+          new android.os.Handler().postDelayed(new Runnable() {
+              @Override
+              public void run() {
+                  txt.setVisibility(INVISIBLE);
+                  img.setVisibility(VISIBLE);
+                  setActiveCircles(password.length());
+              }
+          },250);
+      }catch (Exception e ){
+      }
+
     }else{
           if (type.equals(IbraPinView.TYPE_LOCK_SCREEN)){
               setPassiveCircles(correctPass.length());

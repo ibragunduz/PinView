@@ -154,15 +154,19 @@ if (setPinListener!=null)setPinListener.onPinChange(password);
     }
 
     public void reset(){
+try {
+    new android.os.Handler().postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            password = "";
+            cardx.setVisibility(INVISIBLE);
+            update();
+        }
+    },250);
 
-        new android.os.Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-        password = "";
-        cardx.setVisibility(INVISIBLE);
-        update();
-            }
-        },250);
+}catch (Exception e){
+
+}
 
 
     }
