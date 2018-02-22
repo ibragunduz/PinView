@@ -6,6 +6,8 @@ package com.ibragunduz.pinview.View;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
@@ -172,6 +174,19 @@ try {
     }
 
 
+    public void setColorFilter(int color){
+
+        for (int i = 0 ; i<cardViews.length;i++){
+            CardView c =  ((CardView)rootView.findViewById(cardViews[i]));
+           c.getBackground().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+
+        }
+
+    }
+
+
+
+
 
     public void attachIndicator(IbraPinIndicator ibraPinIndicator,String type){
         pinIndicator = ibraPinIndicator;
@@ -182,6 +197,7 @@ try {
     public void setMargin(int m){
         for (int i = 0 ; i<cardViews.length;i++){
             CardView cardview =   ((CardView)rootView.findViewById(cardViews[i]));
+
             LayoutParams ll =   (LinearLayout.LayoutParams)cardview.getLayoutParams();
 
 
@@ -265,6 +281,31 @@ try {
             textView.setTextColor(Color.parseColor(color));
         }
     }
+
+    public void setCharsFontAndSize(String font,int size){
+
+        for (int i = 0 ; i<textViewsChars.length;i++){
+            TextView text = ((TextView)findViewById(textViewsChars[i]));
+            Typeface type = Typeface.createFromAsset(getContext().getAssets(),font);
+            text.setTypeface(type);
+            text.setTextSize(size);
+        }
+    }
+
+    public void setTextsFontAndSize(String font,int size){
+
+        for (int i = 0 ; i<textViewsChars.length;i++){
+            TextView text = ((TextView)findViewById(textViewNumbers[i]));
+            Typeface type = Typeface.createFromAsset(getContext().getAssets(),font);
+            text.setTypeface(type);
+            text.setTextSize(size);
+        }
+    }
+
+
+
+
+
 
 
     public void setPinBackgroundDrawable(int resId){

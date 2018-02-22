@@ -1,5 +1,6 @@
 package com.ibragunduz.pinview;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //pinView.attachIndicator(pinIndicator,IbraPinView.TYPE_LOCK_SCREEN);
         pinView.setCorrectPassword("1234");
 
+        pinView.setColorFilter(Color.BLUE);
         pinIndicator.setDotDrawable(R.drawable.ic_circle);
         pinIndicator.setMargin(20);
         pinIndicator.setTextSize(10);

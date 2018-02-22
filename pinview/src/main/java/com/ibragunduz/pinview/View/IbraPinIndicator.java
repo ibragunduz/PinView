@@ -6,6 +6,9 @@ package com.ibragunduz.pinview.View;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.media.Image;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
@@ -92,6 +95,17 @@ public class IbraPinIndicator extends LinearLayout {
 
 
 
+    public void setColorFilter(int color){
+
+        for (int i = 0 ; i<circles.length;i++){
+            ImageView c =  ((ImageView)rootView.findViewById(circles[i]));
+            c.setColorFilter(color);
+
+        }
+
+    }
+
+
     protected void update(String password1){
       final  String password = password1;
       if (password.length()>0){
@@ -138,6 +152,17 @@ public class IbraPinIndicator extends LinearLayout {
             circle.setLayoutParams(layoutParams);
         }
     }
+
+
+    public void setTextsFontAndSize(String font){
+
+        for (int i = 0 ; i<txts.length;i++){
+            TextView text = ((TextView)findViewById(txts[i]));
+            Typeface type = Typeface.createFromAsset(getContext().getAssets(),font);
+            text.setTypeface(type);
+        }
+    }
+
     public void setTextSize(int textSize){
         for (int i = 0 ; i<txts.length;i++){
             TextView textView = ((TextView)rootView.findViewById(txts[i]));
