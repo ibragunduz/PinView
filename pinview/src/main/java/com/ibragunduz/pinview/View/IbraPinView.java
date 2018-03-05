@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.ibragunduz.pinview.Cache;
 import com.ibragunduz.pinview.Interfaces.PinLockListener;
 import com.ibragunduz.pinview.Interfaces.SetPinListener;
 import com.ibragunduz.pinview.R;
@@ -286,20 +287,20 @@ try {
 
         for (int i = 0 ; i<textViewsChars.length;i++){
             TextView text = ((TextView)findViewById(textViewsChars[i]));
-            Typeface type = Typeface.createFromAsset(getContext().getAssets(),font);
-            text.setTypeface(type);
+            text.setTypeface(Cache.getTypeface(font,getContext()));
             text.setTextSize(size);
         }
     }
 
     public void setTextsFontAndSize(String font,int size){
 
-        for (int i = 0 ; i<textViewsChars.length;i++){
+
+        for (int i = 0 ; i<textViewNumbers.length;i++){
             TextView text = ((TextView)findViewById(textViewNumbers[i]));
-            Typeface type = Typeface.createFromAsset(getContext().getAssets(),font);
-            text.setTypeface(type);
+            text.setTypeface(Cache.getTypeface(font,getContext()));
             text.setTextSize(size);
         }
+
     }
 
 

@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ibragunduz.pinview.Cache;
 import com.ibragunduz.pinview.R;
 
 
@@ -158,8 +159,7 @@ public class IbraPinIndicator extends LinearLayout {
 
         for (int i = 0 ; i<txts.length;i++){
             TextView text = ((TextView)findViewById(txts[i]));
-            Typeface type = Typeface.createFromAsset(getContext().getAssets(),font);
-            text.setTypeface(type);
+            text.setTypeface(Cache.getTypeface(font,getContext()));
         }
     }
 
