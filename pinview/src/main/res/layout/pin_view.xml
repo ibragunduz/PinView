@@ -338,6 +338,7 @@
             android:id="@+id/pin_view_card_x"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:visibility="invisible"
             android:layout_marginRight="10dp">
             <LinearLayout
                 android:layout_width="match_parent"

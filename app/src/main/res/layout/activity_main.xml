@@ -39,7 +39,6 @@
           android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="Hello World!"
             app:layout_constraintVertical_bias="1.0" />

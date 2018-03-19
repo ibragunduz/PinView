@@ -165,7 +165,7 @@ try {
             cardx.setVisibility(INVISIBLE);
             update();
         }
-    },250);
+    },100);
 
 }catch (Exception e){
 

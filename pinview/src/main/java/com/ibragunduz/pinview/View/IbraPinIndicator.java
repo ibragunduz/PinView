@@ -124,7 +124,7 @@ public class IbraPinIndicator extends LinearLayout {
                   img.setVisibility(VISIBLE);
                   setActiveCircles(password.length());
               }
-          },250);
+          },100);
       }catch (Exception e ){
       }
 

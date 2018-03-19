@@ -24,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         pinView.attachIndicator(pinIndicator,IbraPinView.TYPE_LOCK_SCREEN);
         //pinView.attachIndicator(pinIndicator,IbraPinView.TYPE_LOCK_SCREEN);
-        pinView.setCorrectPassword("1234");
+        pinView.setCorrectPassword("12342342");
+
+        pinView.setButtonSize(120,120);
+
+pinView.setMargin(10);
 
         pinView.setColorFilter(Color.BLUE);
         pinIndicator.setDotDrawable(R.drawable.ic_circle);
