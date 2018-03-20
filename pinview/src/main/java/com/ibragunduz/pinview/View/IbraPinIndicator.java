@@ -66,7 +66,9 @@ public class IbraPinIndicator extends LinearLayout {
         this.correctPass = pass;
 
         for (int i = correctPass.length();i<8;i++){
+            try {
                 ((RelativeLayout)rootView.findViewById(layouts[i])).setVisibility(GONE);
+            }catch (Exception e){}
         }
     }
 
@@ -80,15 +82,25 @@ public class IbraPinIndicator extends LinearLayout {
     }
     protected void setPassiveCircles(int counts){
         for (int i = 0 ; i<counts;i++){
+            try {
             ((ImageView)rootView.findViewById(circles[i])).setImageResource(circlePasiveDrawable);
+            }catch (Exception e){
+
+            }
         }
     }
     protected void setActiveCircles(int counts){
         for (int i = 0 ; i<counts;i++){
+            try {
             ((ImageView)rootView.findViewById(circles[i])).setImageResource(circleActiveDrawable);
+            }catch (Exception e){}
         }
         for (int i = counts ; i<8;i++){
+            try {
+
             ((ImageView)rootView.findViewById(circles[i])).setImageResource(circlePasiveDrawable);
+            }catch (Exception e){}
+
         }
     }
     String type = IbraPinView.TYPE_SET_LOCK;
@@ -99,8 +111,11 @@ public class IbraPinIndicator extends LinearLayout {
     public void setColorFilter(int color){
 
         for (int i = 0 ; i<circles.length;i++){
+            try {
             ImageView c =  ((ImageView)rootView.findViewById(circles[i]));
             c.setColorFilter(color);
+            }catch (Exception e){}
+
 
         }
 
@@ -158,25 +173,31 @@ public class IbraPinIndicator extends LinearLayout {
     public void setTextsFontAndSize(String font){
 
         for (int i = 0 ; i<txts.length;i++){
+            try {
             TextView text = ((TextView)findViewById(txts[i]));
             text.setTypeface(Cache.getTypeface(font,getContext()));
+            }catch (Exception e){}
         }
     }
 
     public void setTextSize(int textSize){
         for (int i = 0 ; i<txts.length;i++){
+            try {
             TextView textView = ((TextView)rootView.findViewById(txts[i]));
             textView.setTextSize(textSize);
+            }catch (Exception e){}
         }
     }
     public void setDotSize(int w,int h){
         for (int i = 0 ; i<circles.length;i++){
+            try {
             ImageView circle = ((ImageView)rootView.findViewById(circles[i]));
            ViewGroup.LayoutParams params =  circle.getLayoutParams();
 
            params.width = w;
            params.height = h;
            circle.setLayoutParams(params);
+            }catch (Exception e){}
         }
     }
 
