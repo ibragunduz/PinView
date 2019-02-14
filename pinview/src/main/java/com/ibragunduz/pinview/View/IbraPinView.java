@@ -25,6 +25,8 @@ import com.ibragunduz.pinview.Interfaces.SetPinListener;
 import com.ibragunduz.pinview.R;
 
 import java.util.logging.Handler;
+import android.os.Looper;
+
 
 public class IbraPinView extends LinearLayout  {
 
@@ -158,7 +160,7 @@ if (setPinListener!=null)setPinListener.onPinChange(password);
 
     public void reset(){
 try {
-    new android.os.Handler().postDelayed(new Runnable() {
+    new android.os.Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
         @Override
         public void run() {
             password = "";
