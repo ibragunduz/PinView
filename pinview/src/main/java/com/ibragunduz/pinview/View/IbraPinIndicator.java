@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.os.Looper;
+
 import android.widget.TextView;
 
 import com.ibragunduz.pinview.Cache;
@@ -132,7 +134,7 @@ public class IbraPinIndicator extends LinearLayout {
       txt.setVisibility(VISIBLE);
       txt.setText(password.charAt(password.length()-1)+"");
       try {
-          new android.os.Handler().postDelayed(new Runnable() {
+          new android.os.Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
               @Override
               public void run() {
                   txt.setVisibility(INVISIBLE);
